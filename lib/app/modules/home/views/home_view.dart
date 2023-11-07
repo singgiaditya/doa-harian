@@ -25,6 +25,11 @@ class HomeView extends GetView<HomeController> {
                   child: CircularProgressIndicator(),
                 );
               }
+              if (snapshot.hasError) {
+                Center(
+                  child: Text("Terjadi Kesalahan"),
+                );
+              }
               return ListView.builder(
                 itemCount: snapshot.data?.length,
                 itemBuilder: (context, index) {
